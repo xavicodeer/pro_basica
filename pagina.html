@@ -1,6 +1,389 @@
-<h1>Café del barrio</h1>
-<p>Abrimos todos los días desde las 7:00 a.m.</p>
-<h2>Métodos de preparación</h2>
-<p>Tenemos espresso, filtrado y prensa francesa.<p/>
-<a href="https://www.google.com" target="_blank">Búscanos en Google</a>
-<img src="https://plus.unsplash.com/premium_photo-1675435644687-562e8042b9db?q=80&w=749&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Imagen de una taza de café">
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ookini - Café de Especialidad</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#FBF9F5] text-stone-800 antialiased selection:bg-amber-100 selection:text-amber-900">
+
+    <!-- Navegación -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#FBF9F5]/90 backdrop-blur-md border-b border-stone-200">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="text-2xl font-bold tracking-widest text-stone-900">☕ OOKINI</a>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-stone-600">
+                <a href="#inicio" class="hover:text-amber-800 transition">Inicio</a>
+                <a href="#especiales" class="hover:text-amber-800 transition">Reservas Especiales</a>
+                <a href="#walkin" class="hover:text-amber-800 transition">Walk-In</a>
+                <a href="#cata" class="hover:text-amber-800 transition">Cata Dominical</a>
+                <a href="#menu" class="hover:text-amber-800 transition">Granos y Origen</a>
+                <a href="#contacto" class="hover:text-amber-800 transition">Ubicación</a>
+            </nav>
+            <div>
+                <a href="#especiales" class="bg-stone-900 text-stone-100 px-5 py-2.5 rounded-full text-sm font-medium hover:bg-amber-800 transition shadow-sm">
+                    Reservar Cupo
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="pt-32 pb-20 md:pt-40 md:pb-32 px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+            <span class="inline-block bg-amber-100 text-amber-900 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+                Café de Especialidad &bull; San Salvador
+            </span>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-light tracking-tight text-stone-900 leading-tight">
+                Café para <span class="font-semibold italic text-amber-900">codear</span> y sentir.
+            </h1>
+            <p class="text-stone-600 text-base sm:text-lg max-w-lg font-light leading-relaxed">
+                Un santuario minimalista en la Colonia La Rábida. Descubre extracciones lentas de alta precisión o disfruta de una cálida prensa francesa sin prisas.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                <a href="#especiales" class="bg-amber-900 text-white px-8 py-3.5 rounded-xl font-medium text-center hover:bg-stone-900 transition shadow-md">
+                    Reservar Filtrado Lento
+                </a>
+                <a href="#walkin" class="border border-stone-300 text-stone-800 px-8 py-3.5 rounded-xl font-medium text-center hover:bg-stone-100 transition">
+                    Ver Menú Walk-In
+                </a>
+            </div>
+            <div class="pt-4 flex items-center space-x-6 text-xs text-stone-500 font-medium">
+                <div>⏰ Abierto todos los días: 8:00 a.m. – 8:00 p.m.</div>
+                <div>🌍 Precios en USD ($)</div>
+            </div>
+        </div>
+        <div class="relative">
+            <div class="aspect-[4/5] rounded-3xl bg-stone-200 overflow-hidden shadow-2xl relative">
+                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=800" alt="Método V60 café de especialidad" class="w-full h-full object-cover object-center filter brightness-95">
+                <div class="absolute inset-0 bg-gradient-to-t from-stone-900/60 via-transparent to-transparent flex items-end p-8">
+                    <div class="text-white">
+                        <p class="text-xs uppercase tracking-widest text-amber-300 font-semibold">Experiencia Japandi</p>
+                        <p class="text-xl font-medium">Paso a paso, extracciones puras.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Reservas Especiales (Límite diario 50 tazas) -->
+    <section id="especiales" class="bg-stone-100 py-24 px-6 border-y border-stone-200">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-stone-900">Preparaciones Especiales con Reserva</h2>
+                <p class="text-stone-600 text-sm sm:text-base">
+                    Métodos de filtrado lento y complejo. <strong class="text-amber-900">Máximo 50 tazas diarias</strong> en conjunto y límite de <strong class="text-amber-900">2 tazas por persona</strong> al día.
+                </p>
+                <!-- Contador dinámico de stock -->
+                <div class="inline-block bg-white border border-stone-200 rounded-full px-4 py-1.5 text-xs font-semibold text-stone-700 shadow-sm mt-2">
+                    🔥 Tazas disponibles hoy para reserva: <span id="tazas-restantes" class="text-amber-800 font-bold">50</span> / 50
+                </div>
+            </div>
+
+            <!-- Tarjetas de Métodos -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <!-- V60 -->
+                <div class="bg-white rounded-2xl p-8 border border-stone-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-xs font-bold uppercase tracking-wider bg-stone-100 text-stone-800 px-3 py-1 rounded-full">Filtrado</span>
+                            <span class="text-2xl font-bold text-amber-900">$5</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-stone-900 mb-2">V60 Origami</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed mb-6">
+                            Extracción limpia y brillante que resalta notas florales, cítricas y complejos matices de origen.
+                        </p>
+                    </div>
+                    <button onclick="seleccionarMetodo('V60', 5)" class="w-full bg-stone-900 text-white py-3 rounded-xl font-medium text-sm hover:bg-amber-800 transition">
+                        Seleccionar V60
+                    </button>
+                </div>
+
+                <!-- Kyoto Drip -->
+                <div class="bg-white rounded-2xl p-8 border border-stone-200 shadow-sm flex flex-col justify-between hover:shadow-md transition relative">
+                    <div class="absolute -top-3 right-6 bg-amber-800 text-white text-[10px] uppercase font-bold px-3 py-1 rounded-full">Más Popular</div>
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-xs font-bold uppercase tracking-wider bg-stone-100 text-stone-800 px-3 py-1 rounded-full">Gota a Gota</span>
+                            <span class="text-2xl font-bold text-amber-900">$7</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-stone-900 mb-2">Kyoto Drip Tower</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed mb-6">
+                            Extracción en frío durante horas. Un café denso, dulce, de baja acidez y perfil sumamente refinado.
+                        </p>
+                    </div>
+                    <button onclick="seleccionarMetodo('Kyoto Drip', 7)" class="w-full bg-stone-900 text-white py-3 rounded-xl font-medium text-sm hover:bg-amber-800 transition">
+                        Seleccionar Kyoto Drip
+                    </button>
+                </div>
+
+                <!-- Siphon -->
+                <div class="bg-white rounded-2xl p-8 border border-stone-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-xs font-bold uppercase tracking-wider bg-stone-100 text-stone-800 px-3 py-1 rounded-full">Vacío y Calor</span>
+                            <span class="text-2xl font-bold text-amber-900">$8</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-stone-900 mb-2">Siphon Japonés</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed mb-6">
+                            Un espectáculo alquímico de temperatura y vacío. Aroma intenso y taza sumamente limpia en boca.
+                        </p>
+                    </div>
+                    <button onclick="seleccionarMetodo('Siphon', 8)" class="w-full bg-stone-900 text-white py-3 rounded-xl font-medium text-sm hover:bg-amber-800 transition">
+                        Seleccionar Siphon
+                    </button>
+                </div>
+            </div>
+
+            <!-- Formulario de Reserva Interactivo -->
+            <div id="formulario-reserva-box" class="max-w-xl mx-auto bg-white rounded-3xl p-8 sm:p-10 border border-stone-200 shadow-xl">
+                <h3 class="text-2xl font-bold text-stone-900 mb-2">Simulador de Reserva Especial</h3>
+                <p class="text-stone-600 text-sm mb-6">Completa tus datos para apartar tu cupo diario con franja horaria exacta.</p>
+
+                <form id="form-reserva" onsubmit="realizarReserva(event)" class="space-y-5">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">Método Seleccionado</label>
+                        <input type="text" id="metodo-input" value="Ninguno seleccionado" readonly class="w-full p-3 bg-stone-50 border border-stone-200 rounded-xl font-medium text-stone-800 cursor-not-allowed">
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">Cantidad de Tazas (Máx. 2)</label>
+                            <select id="cantidad-input" class="w-full p-3 bg-stone-50 border border-stone-200 rounded-xl text-stone-800 focus:ring-2 focus:ring-amber-800 focus:outline-none">
+                                <option value="1">1 Taza</option>
+                                <option value="2">2 Tazas (Máximo por persona)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">Franja Horaria</label>
+                            <select id="hora-input" class="w-full p-3 bg-stone-50 border border-stone-200 rounded-xl text-stone-800 focus:ring-2 focus:ring-amber-800 focus:outline-none">
+                                <option value="09:00 AM">09:00 AM</option>
+                                <option value="11:00 AM">11:00 AM</option>
+                                <option value="02:00 PM">02:00 PM</option>
+                                <option value="04:00 PM">04:00 PM</option>
+                                <option value="06:00 PM">06:00 PM</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">Nombre Completo</label>
+                        <input type="text" id="nombre-input" required placeholder="Tu nombre" class="w-full p-3 bg-stone-50 border border-stone-200 rounded-xl text-stone-800 focus:ring-2 focus:ring-amber-800 focus:outline-none">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">Modalidad de Pago</label>
+                        <select id="pago-input" class="w-full p-3 bg-stone-50 border border-stone-200 rounded-xl text-stone-800 focus:ring-2 focus:ring-amber-800 focus:outline-none">
+                            <option value="online">Pago Online Inmediato (Tarjeta USD)</option>
+                            <option value="local">Pagar en el Local al Llegar (Reserva Gratis)</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="w-full bg-amber-900 text-white py-4 rounded-xl font-medium hover:bg-stone-900 transition shadow-md">
+                        Confirmar Reserva Especial
+                    </button>
+                </form>
+
+                <!-- Mensaje de éxito -->
+                <div id="resultado-reserva" class="hidden mt-6 p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-900 text-sm space-y-2 text-center">
+                    <p class="font-bold text-lg">¡Reserva registrada con éxito! 🎉</p>
+                    <p id="detalle-exito-reserva"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Walk-In: Prensa Francesa -->
+    <section id="walkin" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <span class="bg-stone-200 text-stone-800 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+                    Sin Reserva Previa
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-stone-900">Prensa Francesa Walk-In</h2>
+                <p class="text-stone-600 text-base leading-relaxed">
+                    ¿Vienes de paso o de forma espontánea? Disfruta de nuestra robusta y reconfortante Prensa Francesa en cualquier momento dentro de nuestro horario de atención.
+                </p>
+                <ul class="space-y-3 text-sm text-stone-700 font-medium">
+                    <li class="flex items-center space-x-2">
+                        <span class="text-amber-800">✓</span> <span>Sin límite de tazas por persona.</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <span class="text-amber-800">✓</span> <span>Disponible todo el día hasta cerrar (8:00 p.m.).</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <span class="text-amber-800">✓</span> <span>Precio único: <strong class="text-amber-900 text-lg">$3</strong> por taza.</span>
+                    </li>
+                </ul>
+                <div class="pt-2">
+                    <span class="inline-block bg-stone-100 text-stone-600 text-xs px-3 py-2 rounded-xl border border-stone-200">
+                        🥐 <em>Acompañamiento opcional disponible (pastelería y pan de masa madre en barra).</em>
+                    </span>
+                </div>
+            </div>
+            <div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-xl bg-stone-100">
+                <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=800" alt="Prensa francesa café" class="w-full h-full object-cover">
+            </div>
+        </div>
+    </section>
+
+    <!-- Cata Semanal / Dominical -->
+    <section id="cata" class="bg-[#1C1917] text-stone-100 py-24 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <span class="bg-amber-800/60 text-amber-200 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+                    Experiencia Dominical Exclusiva
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Cata Semanal Ookini</h2>
+                <p class="text-stone-300 text-sm sm:text-base leading-relaxed">
+                    Una experiencia inmersiva para desarrollar tus sentidos. Métodos de extracción guiados por nuestro barman jefe, degustación de múltiples terroirs y maridaje sugerido.
+                </p>
+                <div class="grid grid-cols-2 gap-4 pt-2">
+                    <div class="bg-stone-800/80 p-4 rounded-2xl border border-stone-700">
+                        <p class="text-xs text-stone-400">Cupos Disponibles</p>
+                        <p class="text-2xl font-bold text-amber-300">8 Personas</p>
+                    </div>
+                    <div class="bg-stone-800/80 p-4 rounded-2xl border border-stone-700">
+                        <p class="text-xs text-stone-400">Inversión</p>
+                        <p class="text-2xl font-bold text-amber-300">$25 <span class="text-xs font-normal text-stone-400">/ p.p.</span></p>
+                    </div>
+                </div>
+                <p class="text-xs text-stone-400">🗓️ Programada todos los domingos. Incluye degustaciones múltiples y guía experta.</p>
+            </div>
+
+            <!-- Formulario Cata -->
+            <div class="bg-stone-900 rounded-3xl p-8 sm:p-10 border border-stone-800 shadow-2xl">
+                <h3 class="text-2xl font-bold mb-2 text-white">Apartar Cupo Cata Dominical</h3>
+                <p class="text-stone-400 text-sm mb-6">Solo 8 lugares por sesión. Asegura tu espacio con anticipación.</p>
+
+                <form onsubmit="reservarCata(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-stone-400 mb-1">Nombre y Apellido</label>
+                        <input type="text" id="cata-nombre" required placeholder="Tu nombre" class="w-full p-3 bg-stone-800 border border-stone-700 rounded-xl text-white placeholder-stone-500 focus:ring-2 focus:ring-amber-600 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-stone-400 mb-1">Correo electrónico</label>
+                        <input type="email" id="cata-correo" required placeholder="tucorreo@example.com" class="w-full p-3 bg-stone-800 border border-stone-700 rounded-xl text-white placeholder-stone-500 focus:ring-2 focus:ring-amber-600 focus:outline-none">
+                    </div>
+                    <button type="submit" class="w-full bg-amber-700 text-white py-3.5 rounded-xl font-medium hover:bg-amber-600 transition shadow-lg">
+                        Reservar Cata ($25 USD)
+                    </button>
+                </form>
+                <div id="mensaje-cata" class="hidden mt-4 p-3 bg-emerald-950 border border-emerald-800 rounded-xl text-emerald-200 text-xs text-center">
+                    ¡Cupo apartado para la Cata Dominical! Nos pondremos en contacto contigo.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Origen y Granos -->
+    <section id="menu" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+            <h2 class="text-3xl font-bold tracking-tight text-stone-900">Nuestros Granos y Tueste</h2>
+            <p class="text-stone-600 text-sm">Seleccionamos cosechas de altura con trazabilidad directa desde productores locales e internacionales.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-stone-50 p-8 rounded-2xl border border-stone-200 space-y-3">
+                <span class="text-xs font-bold text-amber-800 bg-amber-100 px-3 py-1 rounded-full">Origen Único</span>
+                <h3 class="text-lg font-bold text-stone-900">Café de Altura (1,650 msnm)</h3>
+                <p class="text-stone-600 text-sm">Notas a jazmín, panela y durazno blanco. Proceso lavado de fermentación controlada.</p>
+            </div>
+            <div class="bg-stone-50 p-8 rounded-2xl border border-stone-200 space-y-3">
+                <span class="text-xs font-bold text-amber-800 bg-amber-100 px-3 py-1 rounded-full">Honey Experimental</span>
+                <h3 class="text-lg font-bold text-stone-900">Proceso Red Honey</h3>
+                <p class="text-stone-600 text-sm">Cuerpo sedoso con notas dulces a cacao fino, frutos rojos y un toque de vainilla.</p>
+            </div>
+            <div class="bg-stone-50 p-8 rounded-2xl border border-stone-200 space-y-3">
+                <span class="text-xs font-bold text-amber-800 bg-amber-100 px-3 py-1 rounded-full">Natural Anaeróbico</span>
+                <h3 class="text-lg font-bold text-stone-900">Fermentación Prolongada</h3>
+                <p class="text-stone-600 text-sm">Perfil exótico, alta acidez frutal tropical y retrogusto sumamente prolongado.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página / Contacto / Ubicación -->
+    <footer id="contacto" class="bg-stone-900 text-stone-300 py-16 px-6 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="space-y-4">
+                <h2 class="text-2xl font-bold tracking-wider text-white">☕ OOKINI</h2>
+                <p class="text-sm text-stone-400 font-light leading-relaxed">
+                    Café de especialidad diseñado para conectar con cada taza, cada método y cada persona.
+                </p>
+                <p class="text-xs text-stone-500">&copy; 2026 Ookini Café. Todos los derechos reservados.</p>
+            </div>
+            <div class="space-y-3">
+                <h3 class="text-white font-semibold text-sm uppercase tracking-wider">Ubicación y Horarios</h3>
+                <p class="text-sm text-stone-400">📍 Colonia La Rábida, San Salvador</p>
+                <p class="text-sm text-stone-400">⏰ Lunes a Domingo: 8:00 a.m. – 8:00 p.m.</p>
+            </div>
+            <div class="space-y-3">
+                <h3 class="text-white font-semibold text-sm uppercase tracking-wider">Contacto Directo</h3>
+                <p class="text-sm text-stone-400">💬 WhatsApp: <a href="https://wa.me/50374949997" target="_blank" class="text-amber-400 hover:underline">+503 7494 9997</a></p>
+                <p class="text-sm text-stone-400">📸 Instagram: @ookini.cafe</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lógica JavaScript interactiva -->
+    <script>
+        let tazasRestantes = 50;
+        let metodoSeleccionado = '';
+        let precioMetodo = 0;
+
+        function seleccionarMetodo(metodo, precio) {
+            metodoSeleccionado = metodo;
+            precioMetodo = precio;
+            document.getElementById('metodo-input').value = `${metodo} ($${precio} USD)`;
+            // Desplazar suavemente al formulario
+            document.getElementById('formulario-reserva-box').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function realizarReserva(event) {
+            event.preventDefault();
+            if (!metodoSeleccionado) {
+                alert('Por favor selecciona primero un método especial arriba (V60, Kyoto Drip o Siphon).');
+                return;
+            }
+
+            const cantidad = parseInt(document.getElementById('cantidad-input').value);
+            if (cantidad > tazasRestantes) {
+                alert('No hay suficientes tazas disponibles para el día de hoy con ese volumen.');
+                return;
+            }
+
+            tazasRestantes -= cantidad;
+            document.getElementById('tazas-restantes').innerText = tazasRestantes;
+
+            const nombre = document.getElementById('nombre-input').value;
+            const hora = document.getElementById('hora-input').value;
+            const tipoPago = document.getElementById('pago-input').value;
+            const total = cantidad * precioMetodo;
+
+            const textoDetalle = `A nombre de: <strong>${nombre}</strong><br>Método: <strong>${metodoSeleccionado} (${cantidad} taza/s)</strong><br>Hora asignada: <strong>${hora}</strong><br>Total a pagar: <strong>$${total} USD</strong> (${tipoPago === 'online' ? 'Pago Online' : 'Pago en Local'})`;
+
+            document.getElementById('detalle-exito-reserva').innerHTML = textoDetalle;
+            document.getElementById('resultado-reserva').classList.remove('hidden');
+
+            // Resetear
+            document.getElementById('form-reserva').reset();
+            document.getElementById('metodo-input').value = 'Ninguno seleccionado';
+            metodoSeleccionado = '';
+        }
+
+        function reservarCata(event) {
+            event.preventDefault();
+            document.getElementById('mensaje-cata').classList.remove('hidden');
+            setTimeout(() => {
+                document.getElementById('mensaje-cata').classList.add('hidden');
+            }, 6000);
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
