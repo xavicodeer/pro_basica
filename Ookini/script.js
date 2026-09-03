@@ -1,12 +1,3 @@
-// function calcularPrecio(precioUnitario, cantidad){
-//     const total = precioUnitario * cantidad;
-//     return total;
-// }
-
-// function puedoReservar(cantidad){
-//     return cantidad <= 2;
-// }
-
 function puedoReservar(tazasDisponibles){
     return tazasDisponibles > 0;
 }
