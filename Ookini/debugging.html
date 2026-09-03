@@ -41,30 +41,86 @@
 <body>
   <h1>Reservar en Ookini</h1>
   <label for="cantidad">¿Cuántas tazas quieres reservar?</label>
-  <input type="text" id="cantidad">
+  <input type="number" id="cantidad">
   <button id="reservar">Reservar</button>
 
   <script>
-    function puedeReservar(cantidad) {
-      if (cantidad > 2) {
-        return false;
-      }
-      return true;
+    function puedeReservar(valorInput, stockDiarioRestante) {
+  // 1. Validar si está vacío o es nulo/indefinido
+  if (valorInput === null || valorInput === undefined || valorInput.toString().trim() === "") {
+    return { valido: false, mensaje: "El campo no puede estar vacío." };
+  }
+
+  // 2. Limpiar espacios en blanco
+  const valorLimpio = valorInput.toString().trim();
+
+  // 3. Validar que contenga ÚNICAMENTE dígitos numéricos enteros positivos.
+  // Expresión regular que rechaza letras, símbolos, signos negativos (-), puntos decimales (.) y el cero (0).
+  const esEnteroPositivo = /^[1-9]\d*$/.test(valorLimpio);
+
+  if (!esEnteroPositivo) {
+    // Validaciones específicas para dar un mensaje más claro al usuario
+    if (isNaN(Number(valorLimpio))) {
+      return { valido: false, mensaje: "Por favor, ingresa solo números válidos (no se permiten letras ni símbolos)." };
     }
+    
+    const numero = Number(valorLimpio);
+    
+    if (numero < 0) {
+      return { valido: false, mensaje: "No se permiten números negativos." };
+    }
+    if (numero === 0) {
+      return { valido: false, mensaje: "Debes reservar al menos 1 taza." };
+    }
+    if (!Number.isInteger(numero)) {
+      return { valido: false, mensaje: "Por favor, ingresa un número entero de tazas." };
+    }
+  }
 
-    const input = document.querySelector("#cantidad");
-    const boton = document.querySelector("#reservar");
+  // Convertimos a número entero de forma segura una vez pasada la validación de formato
+  const cantidad = parseInt(valorLimpio, 10);
 
-    boton.addEventListener("click", function () {
-      const cantidad = input.value;
-      console.log("La cantidad es:", cantidad); 
-      console.log("El tipo es:", typeof cantidad);
-      if (puedeReservar(cantidad)) {
-        alert("Reserva confirmada");
-      } else {
-        alert("No se puede reservar esa cantidad");
-      }
-    });
+  // 4. Regla de negocio de Ookini: Máximo 2 tazas por persona
+  if (cantidad > 2) {
+    return { valido: false, mensaje: "Solo puedes reservar un máximo de 2 tazas por persona." };
+  }
+
+  // 5. Validación contra el stock diario disponible (50 tazas en total)
+  if (cantidad > stockDiarioRestante) {
+    return { valido: false, mensaje: `No hay suficientes tazas disponibles hoy. Quedan ${stockDiarioRestante} disponibles.` };
+  }
+
+  // Si pasa todas las validaciones
+  return { valido: true, cantidadNumerica: cantidad };
+}
+
+// --- Implementación con tu DOM ---
+const input = document.querySelector("#cantidad");
+const boton = document.querySelector("#reservar");
+
+// Simulación de tazas restantes en el día (esto vendría de tu backend o estado global)
+let tazasRestantesHoy = 50; 
+
+boton.addEventListener("click", function (event) {
+  event.preventDefault(); // Evita recargar la página si está dentro de un formulario
+
+  const valorIngresado = input.value;
+  console.log("El valor crudo es:", valorIngresado); 
+  console.log("El tipo es:", typeof valorIngresado);
+
+  // Evaluamos usando nuestra función robusta
+  const resultadoValidacion = puedeReservar(valorIngresado, tazasRestantesHoy);
+
+  if (resultadoValidacion.valido) {
+    // Descontamos del stock simulado
+    tazasRestantesHoy -= resultadoValidacion.cantidadNumerica;
+    alert(`¡Reserva confirmada por ${resultadoValidacion.cantidadNumerica} taza(s)!`);
+    console.log("Stock restante actualizado:", tazasRestantesHoy);
+  } else {
+    // Mostramos el error específico que arrojó la validación
+    alert(`Error: ${resultadoValidacion.mensaje}`);
+  }
+});
   </script>
 </body>
 
