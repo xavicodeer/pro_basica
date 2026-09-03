@@ -1,0 +1,24 @@
+body{
+    background-color: #f0f0f0;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+
+h1{
+    color: #5b9b8e;
+    font-size: 2.5em;
+}
+
+header{
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid #1a1a1a;
+}
+
+nav a{
+    color: #5b9b8e;
+    text-decoration: none;
+}
+
+main{
+    padding: 3rem 2rem;
+}
