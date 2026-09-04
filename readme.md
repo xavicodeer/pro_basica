@@ -1,1 +1,5 @@
 Ookini
+Delegation
+Description
+Discernment
+Diligence
